@@ -21,7 +21,7 @@ type DiaryLesson struct {
 	Comment     string          `json:"comment"` // если пару отменили, причина
 	Time        DiaryLessonTime `json:"time"`
 	Subject     Subject         `json:"subject"`
-	Homework    Homework        `json:"homework"`
+	Homework    []Homework        `json:"homework"`
 	Marks       []Mark          `json:"marks"`
 	Attachments []Attachment    `json:"attachments"`
 	Teachers    []Teacher       `json:"teachers"`
