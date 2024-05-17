@@ -33,7 +33,13 @@ func (api *DiaryAPI) UserRequest(method string, user *User, params map[string]in
 
 	if params != nil {
 		if p, ok := params["account_id"]; ok {
-			headers["X-Account-Id"] = []string{p.(string)}
+			if z, ok := p.(string); ok {
+				headers["X-Account-Id"] = []string{z}
+			} else if z, ok := p.(int); ok {
+				headers["X-Account-Id"] = []string{utils.IntToString(z)}
+			} else if z, ok := p.(int64); ok {
+				headers["X-Account-Id"] = []string{utils.Int64ToString(z)}
+			}
 			delete(params, "account_id")
 		}
 	}
