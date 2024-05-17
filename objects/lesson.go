@@ -6,7 +6,7 @@ type LessonGeneric struct {
 	Date     DiaryDayInfo `json:"day_info"`
 	Number   int32        `json:"number"`
 	Subject  Subject      `json:"subject"`
-	Homework Homework     `json:"homework"`
+	Homeworks []Homework     `json:"homeworks"`
 	Teachers []Teacher    `json:"teachers"`
 }
 
@@ -21,7 +21,7 @@ type DiaryLesson struct {
 	Comment     string          `json:"comment"` // если пару отменили, причина
 	Time        DiaryLessonTime `json:"time"`
 	Subject     Subject         `json:"subject"`
-	Homework    []Homework        `json:"homework"`
+	Homeworks    []Homework        `json:"homeworks"`
 	Marks       []Mark          `json:"marks"`
 	Attachments []Attachment    `json:"attachments"`
 	Teachers    []Teacher       `json:"teachers"`
