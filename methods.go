@@ -4,7 +4,7 @@ import (
 	"github.com/roma351/diary_api/resources"
 )
 
-func (api *DiaryAPI) Context(user *User, params map[string]interface{}) (res resources.Context, err error) {
+func (api *DiaryAPI) User(user *User, params map[string]interface{}) (res resources.Context, err error) {
 	err = api.UserRequest("/user/context", user, params, &res)
 	return
 }
