@@ -7,3 +7,8 @@ type Sources struct {
 	DefaultSourceId int32             `json:"default_source_id"`
 	*ExtraResponse
 }
+
+type Regions struct {
+	Items []*objects.Region `json:"items"`
+	*ExtraResponse
+}

@@ -8,3 +8,7 @@ type Context struct {
 	Settings objects.SettingsContext `json:"settings"`
 	*ExtraResponse
 }
+
+type Context2 struct {
+	Account objects.AccountContext `json:"account"`
+}

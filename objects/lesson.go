@@ -1,15 +1,5 @@
 package objects
 
-type LessonGeneric struct {
-	ID       string       `json:"id"`
-	SID      string       `json:"sid"`
-	Date     DiaryDayInfo `json:"day_info"`
-	Number   int32        `json:"number"`
-	Subject  Subject      `json:"subject"`
-	Homeworks []Homework     `json:"homeworks"`
-	Teachers []Teacher    `json:"teachers"`
-}
-
 type DiaryLesson struct {
 	ID          string          `json:"id"` // unix + | + id
 	SID         string          `json:"sid"`
@@ -21,7 +11,7 @@ type DiaryLesson struct {
 	Comment     string          `json:"comment"` // если пару отменили, причина
 	Time        DiaryLessonTime `json:"time"`
 	Subject     Subject         `json:"subject"`
-	Homeworks    []Homework        `json:"homeworks"`
+	Homeworks   []Homework      `json:"homeworks"`
 	Marks       []Mark          `json:"marks"`
 	Attachments []Attachment    `json:"attachments"`
 	Teachers    []Teacher       `json:"teachers"`

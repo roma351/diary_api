@@ -11,3 +11,5 @@ type Login struct {
 	New      bool                    `json:"new"`
 	*ExtraResponse
 }
+
+type BySign Login
