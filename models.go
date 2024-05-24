@@ -5,8 +5,6 @@ import "net/http"
 type DiaryAPI struct {
 	client *http.Client
 
-	Url string
-
 	AppId       string
 	AppSecret   string
 	AppPrivate  string

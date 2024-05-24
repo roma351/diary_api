@@ -11,13 +11,15 @@ import (
 	"time"
 )
 
+var ApiUrl = "https://api.school-diary.ru/method"
+
 var UserAgent = "DiaryAPI/1.0"
 
 func (api *DiaryAPI) Request(method string, params map[string]interface{}, response interface{}) error {
 	headers := map[string][]string{
 		"X-Token-App": {fmt.Sprintf("%s.%s", api.AppId, api.AppPrivate)},
 	}
-	return api.request(api.Url+method, params, headers, response)
+	return api.request(ApiUrl+method, params, headers, response)
 }
 
 func (api *DiaryAPI) UserRequest(method string, user *User, params map[string]interface{}, response interface{}) error {
@@ -44,7 +46,7 @@ func (api *DiaryAPI) UserRequest(method string, user *User, params map[string]in
 		}
 	}
 
-	return api.request(api.Url+method, params, headers, response)
+	return api.request(ApiUrl+method, params, headers, response)
 }
 
 func (api *DiaryAPI) request(url string, json2 map[string]interface{}, headers http.Header, response interface{}) error {
