@@ -63,6 +63,7 @@ func (api *DiaryAPI) request(url string, payload map[string]interface{}, headers
 	}
 
 	req.Header = headers
+	//req.Header.Set("Accept-Encoding", "gzip, deflate, br")
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Connection", "Keep-Alive")
