@@ -29,7 +29,7 @@ func (api *DiaryAPI) App() (res struct {
 	Title string  `json:"title"`
 	Image *string `json:"image"`
 }, err error) {
-	err = api.UserRequest("/service", nil, nil, &res)
+	err = api.Request("/service", nil, &res)
 	return
 }
 

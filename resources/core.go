@@ -3,14 +3,12 @@ package resources
 import "encoding/json"
 
 type Core struct {
-	Success bool       `json:"success"`
-	Data    CoreData   `json:"data,omitempty"`
-	Error   *CoreError `json:"error,omitempty"` // Error2
+	Success bool            `json:"success"`
+	Data    json.RawMessage `json:"data,omitempty"`
+	Error   *CoreError      `json:"error,omitempty"` // Error2
 
-	Debug *CoreDebug `json:"debug,omitempty"`
+	Debug interface{} `json:"debug,omitempty"`
 }
-
-type CoreData json.RawMessage
 
 type CoreError struct {
 	Code       int    `json:"code"`
@@ -28,5 +26,3 @@ type CoreErrorAction struct {
 	Text    string            `json:"text"`
 	Options map[string]string `json:"options,omitempty"`
 }
-
-type CoreDebug interface{}
