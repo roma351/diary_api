@@ -2,10 +2,11 @@ package diary_api
 
 import (
 	"bytes"
+	"crypto/sha1"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"github.com/roma351/diary_api/resources"
-	"github.com/roma351/utils"
 	"log"
 	"net/http"
 	"strconv"
@@ -25,9 +26,11 @@ func (api *DiaryAPI) Request(method string, params map[string]interface{}, respo
 
 func (api *DiaryAPI) UserRequest(method string, user *User, params map[string]interface{}, response interface{}) error {
 	t := time.Now().Unix()
-	mySecureRaw := fmt.Sprintf("secure-%s-%d-user-uid-%d-%d", api.AppId, t, user.AuthId, user.UserUid)
+	mySecureRaw := fmt.Sprintf("secure-%s-%d-user-uid-%d-%d-%s", api.AppId, t, user.AuthId, user.UserUid, api.AppPrivate2)
 
-	mySecure := utils.SHA1(fmt.Sprintf("%s-%s", mySecureRaw, api.AppPrivate2))
+	h := sha1.New()
+	h.Write([]byte(mySecureRaw))
+	mySecure := hex.EncodeToString(h.Sum(nil))
 
 	headers := http.Header{
 		"X-Token-App": {fmt.Sprintf("%s.%s", api.AppId, api.AppPrivate)},
