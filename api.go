@@ -80,7 +80,9 @@ func (api *DiaryAPI) request(url string, payload map[string]interface{}, headers
 	}
 
 	if api.client == nil {
-		api.client = &http.Client{}
+		api.client = &http.Client{
+			Timeout: time.Second * 10,
+		}
 	}
 
 	res, err := api.client.Do(req)
