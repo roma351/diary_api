@@ -18,6 +18,8 @@ type RatingCard struct {
 	Private bool    `json:"private"`
 	Mood    *string `json:"mood"`
 
+	Formatting *string `json:"formatting,omitempty"`
+
 	Class    *Class `json:"class,omitempty"`
 	Parallel *int32 `json:"parallel,omitempty"`
 }
