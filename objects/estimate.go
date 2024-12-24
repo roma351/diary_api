@@ -2,6 +2,7 @@ package objects
 
 type Estimate struct {
 	Subject Subject          `json:"subject"`
+	Rating  Rating           `json:"rating"`
 	Groups  []EstimatesGroup `json:"groups"`
 }
 
