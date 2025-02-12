@@ -12,3 +12,10 @@ type EstimatesGroup struct {
 	Rating Rating `json:"rating"`
 	Marks  []Mark `json:"marks"`
 }
+
+type EstimatePeriod struct {
+	Class   Class      `json:"class"`
+	Period  Period     `json:"period"`
+	Current bool       `json:"current"`
+	Items   []Estimate `json:"items"`
+}

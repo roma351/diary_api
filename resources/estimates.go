@@ -7,3 +7,8 @@ type Estimates struct {
 	Items  []objects.Estimate `json:"items"`
 	*ExtraResponse
 }
+
+type EstimatesFinal struct {
+	Items []objects.EstimatePeriod `json:"items"`
+	*ExtraResponse
+}
