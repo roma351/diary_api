@@ -12,3 +12,8 @@ type EstimatesFinal struct {
 	Items []objects.EstimatePeriod `json:"items"`
 	*ExtraResponse
 }
+
+type EstimatesMissed struct {
+	Items []objects.EstimateMiss `json:"items"`
+	*ExtraResponse
+}

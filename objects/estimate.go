@@ -19,3 +19,10 @@ type EstimatePeriod struct {
 	Current bool       `json:"current"`
 	Items   []Estimate `json:"items"`
 }
+
+type EstimateMiss struct {
+	Day      DiaryDayInfo `json:"day_info"`
+	Subject  Subject      `json:"subject"`
+	Type     string       `json:"type"`
+	Teachers []Teacher    `json:"teachers"`
+}
