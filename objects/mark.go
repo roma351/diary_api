@@ -1,12 +1,13 @@
 package objects
 
 type Mark struct {
-	SID    string  `json:"sid"`
-	Type   int32   `json:"type"`
-	Date   *string `json:"date"`
-	Value  string  `json:"value"`
-	Value2 int32   `json:"value2"`
-	Weight *int32  `json:"weight"`
+	SID     string  `json:"sid"`
+	Type    int32   `json:"type"`
+	Date    *string `json:"date"`
+	Value   string  `json:"value"`
+	Value2  int32   `json:"value2"`
+	Weight  string  `json:"weight"`
+	Weight2 int32   `json:"weight2"`
 }
 
 type LastMark struct {
