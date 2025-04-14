@@ -6,6 +6,7 @@ type Mark struct {
 	Date   *string `json:"date"`
 	Value  string  `json:"value"`
 	Value2 int32   `json:"value2"`
+	Weight *int32  `json:"weight"`
 }
 
 type LastMark struct {
