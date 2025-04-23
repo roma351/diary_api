@@ -1,6 +1,9 @@
 package diary_api
 
-import "net/http"
+import (
+	"net/http"
+	"time"
+)
 
 type DiaryAPI struct {
 	client *http.Client
@@ -13,6 +16,8 @@ type DiaryAPI struct {
 	Log bool
 
 	CallUser bool
+
+	Timeout time.Duration
 }
 
 type User struct {

@@ -79,9 +79,13 @@ func (api *DiaryAPI) request(url string, payload map[string]interface{}, headers
 		log.Printf("DIARY API: URL: %s, body: %s\n", url, body)
 	}
 
+	if api.Timeout == 0 {
+		api.Timeout = time.Second * 60
+	}
+
 	if api.client == nil {
 		api.client = &http.Client{
-			Timeout: time.Second * 30,
+			Timeout: api.Timeout,
 		}
 	}
 
