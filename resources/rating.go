@@ -32,3 +32,8 @@ type RatingSubjects struct {
 	Period   objects.Period          `json:"period"`
 	*ExtraResponse
 }
+
+type RatingFriends struct {
+	Items []objects.RatingCard `json:"items"`
+	*ExtraResponse
+}

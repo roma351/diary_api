@@ -2,8 +2,8 @@ package objects
 
 type Rating struct {
 	Average string  `json:"average"`
-	Place   int     `json:"place"`
 	Trend   *bool   `json:"trend"`
+	Place   int     `json:"place"`
 	Mood    *string `json:"mood"`
 }
 
@@ -20,11 +20,19 @@ type RatingCard struct {
 
 	Formatting *string `json:"formatting,omitempty"`
 
-	Class    *Class `json:"class,omitempty"`
-	Parallel *int32 `json:"parallel,omitempty"`
+	Class    *Class  `json:"class,omitempty"`
+	School   *School `json:"school,omitempty"`
+	User     *User   `json:"user,omitempty"`
+	Period   *Period `json:"period,omitempty"`
+	Parallel *int32  `json:"parallel,omitempty"`
 }
 
 type RatingSubject struct {
 	Subject Subject      `json:"subject"`
 	Items   []RatingCard `json:"items"`
+}
+
+type RatingClass struct {
+	Class Class        `json:"class"`
+	Items []RatingCard `json:"items"`
 }
